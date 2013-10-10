@@ -4,6 +4,6 @@ class User < ActiveRecord::Base
 
   has_secure_password
 
-  valid_email_regex = /\w+\.?\w*@[a-zA-Z]+?\.[a-zA-Z]{2,3}/
-  validates :email, presence: true, uniqueness: true, format: { with: valid_email_regex }
+  valid_email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  validates :email, presence: true, uniqueness: { case_sensitive:false }, format: { with: valid_email_regex }
 end
