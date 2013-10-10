@@ -1,0 +1,7 @@
+<ul>
+  <% @user.boards.each do |board| %>
+    <a href='/boards/<%=board.id%>'><li><%= board.name %>
+    <%= board.description %></li></a>
+    <%= link_to "Delete!", board_path(board.id), method: "delete"%>
+  <% end %>
+</ul>
