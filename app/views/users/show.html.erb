@@ -1,7 +1,10 @@
+<h2>Create a Board</h2>
+<%= link_to "New Board", new_board_path %>
+<h2>Your Boards</h2>
 <ul>
   <% @user.boards.each do |board| %>
-    <a href='/boards/<%=board.id%>'><li><%= board.name %>
-    <%= board.description %></li></a>
-    <%= link_to "Delete!", board_path(board.id), method: "delete"%>
+    <%= link_to "#{board.name}", board_path(board.id) %>
+    <%= link_to "Edit", edit_board_path(board.id) %>
+    <%= link_to "Delete!", board_path(board.id), method: "delete" %><br>
   <% end %>
 </ul>
