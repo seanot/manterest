@@ -3,6 +3,7 @@ Manterest::Application.routes.draw do
 
   resources :users
   resources :boards
+  resources :darts
 
   get '/logout' => 'sessions#destroy'
 
