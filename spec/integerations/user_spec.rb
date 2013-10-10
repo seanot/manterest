@@ -6,6 +6,8 @@ describe UsersController, :type => :controller do
     response.should render_template("new")
   end
 
+  it "should create a new user" do
+
   # it "should have a form" do
   #   get :new
   #   response.should

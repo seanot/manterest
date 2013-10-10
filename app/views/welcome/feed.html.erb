@@ -1,2 +1,8 @@
 this is your feed
-<%= link_to "Login", new_user_path %>
+<% if current_user %>
+  <%= link_to "Logout", logout_path %>
+<% else %>
+  <%= link_to "Login", login_path %>
+  <%= link_to "Sign Up", signup_path%>
+<% end %>
+
