@@ -1,5 +1,5 @@
 Create User Bro
-<%= form_for @user do |f| %>
+<%= form_for User.new do |f| %>
   <%= f.label :username %>
   <%= f.text_field :username %><br>
   <%= f.label :email %>
