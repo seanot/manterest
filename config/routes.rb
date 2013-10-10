@@ -2,6 +2,7 @@ Manterest::Application.routes.draw do
   root 'welcome#feed'
 
   resources :users
+  resources :boards
 
   get '/logout' => 'sessions#destroy'
 
