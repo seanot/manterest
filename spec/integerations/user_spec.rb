@@ -12,6 +12,7 @@ describe UsersController, :type => :controller do
   #   get :new
   #   response.should
   # end
+  end
 end
 
 
