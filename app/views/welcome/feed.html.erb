@@ -2,12 +2,7 @@
   <h2><%=h flash[:notice] %></h2>
 <% end %>
 
-this is your feed
-<% if current_user %>
-  <%= link_to "Logout", logout_path %>
-  <%= link_to "Profile", user_path(current_user) %>
-<% else %>
-  <%= link_to "Login", login_path %>
-  <%= link_to "Sign Up", signup_path%>
-<% end %>
+<% @darts.each do |dart|%>
+<a href="<%= dart.link_url %>"><img src="<%= dart.image_url %>" alt="a photo"></a>
+<%end%>
 
