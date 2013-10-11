@@ -18,9 +18,27 @@ describe UsersController do
 
   describe "POST #create" do
     context "successfully creates a user" do
-      it "redirects to homepage" do
+      before(:each) do
         post :create, user: FactoryGirl.attributes_for(:user, email: 'other@diff.com', username: 'cooluser!!')
+      end
+
+      it "redirects to homepage" do
         response.should redirect_to root_path
+      end
+
+      it "should set session to created user's id" do
+        expect(session[:user_id]).to eq(User.last.id)
+      end
+
+      it "should create a user in the database" do
+        expect(User.last.email).to eq('other@diff.com')
+      end
+    end
+
+    context "Unsuccessfully creates a user" do
+      it "renders the 'users#create form" do
+        post :create, user: FactoryGirl.attributes_for(:user, email: 'other@diff', username: 'cooluser!!')
+        expect(response).to render_template :new
       end
     end
   end
