@@ -1,15 +1,5 @@
 <h1><%= @board.name %></h1>
 
-<h2><%= @board.description %></h2>
-
-<% if @board.darts.length == 0 %>
-  <p><%= "You currently have no darts, please add some!" %></p>
-<% else %>
-  <% @board.dartboards.each do |dboard| %>
-    <h6><%= dboard.caption %></h3>
-    <a href="<%= dboard.dart.link_url %>"><img src="<%= dboard.dart.image_url %>" alt="a photo"></a>
-  <% end %>
-<% end %>
 
 Create a dart
 <%= form_for @dart  do |f|%>
@@ -20,3 +10,13 @@ Create a dart
 
   <%= f.submit "Create Dart" %>
 <% end %>
+
+<% if @board.darts.length == 0 %>
+  <p><%= "You currently have no darts, please add some!" %></p>
+<% else %>
+  <% @board.dartboards.each do |dboard| %>
+    <h6><%= dboard.caption %></h3>
+    <a href="<%= dboard.dart.link_url %>"><img src="<%= dboard.dart.image_url %>" alt="a photo"></a>
+  <% end %>
+<% end %>
+
