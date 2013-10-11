@@ -2,7 +2,16 @@
   <h2><%=h flash[:notice] %></h2>
 <% end %>
 
-<% @darts.each do |dart|%>
-<a href="<%= dart.link_url %>"><img src="<%= dart.image_url %>" alt="a photo"></a>
-<%end%>
+
+  <% @darts.each do |dart|%>
+  <div id="masonry-container" class="transitions-enabled infinite-scroll clearfix">
+     <div class="box col3">
+      <a href="<%= dart.link_url %>"><img src="<%= dart.image_url %>" alt="a photo"></a>
+    </div>
+  </div>
+  <%end%>
+
+
+
+
 
