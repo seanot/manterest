@@ -7,7 +7,8 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       redirect_to root_path
     else
-      flash.now.alert = "Don't get it twisted, man!"
+      flash[:error] = "Invalid username or password"
+      redirect_to login_path
     end
   end
 
