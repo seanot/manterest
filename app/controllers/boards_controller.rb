@@ -26,6 +26,8 @@ class BoardsController < ApplicationController
 
   def show
     @board = Board.find(params[:id])
+    @dart = Dart.new
+    session[:board_id] = @board.id
   end
 
   def destroy
