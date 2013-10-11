@@ -1,30 +1,39 @@
 class DartsController < ApplicationController
 
-  def new
-    if current_user
-      @dart = Dart.new
+  def create
+    @dart = current_user.darts.new(dart_params)
+    if @dart.save
+      redirect_to dart_path(@dart) #this should go to a dartboard!
     else
-      flash[:error] = "You must be logged in to create a dart"
-      redirect_to root_path
+      flash[:error] = "Invalid board!"
+      render :new
     end
   end
 
-  def create
-    @dart = current_user.darts.create(dart_params)
-    # dart.user_id = current_user
-    # if @dart.save #this should go to a dartboard!
-    redirect_to dart_path(@dart)
-    # else
-    #   flash[:error] = "Invalid board!"
-    #   render :new
-    # end
+  def destroy
+    dart = Dart.find(params[:id])
+    dart.destroy
+  end
+
+
+  def edit
+    @dart = Dart.find(params[:id])
   end
 
   def index
   end
 
-  def edit
-    @dart = Dart.find(params[:id])
+  def new
+    if current_user
+      @dart = Dart.new
+    else
+      flash[:notice] = "You must be logged in to create a dart"
+      redirect_to root_path
+    end
+  end
+
+  def show
+    @darts = current_user.darts.all
   end
 
   def update
@@ -36,15 +45,6 @@ class DartsController < ApplicationController
       flash[:error] = "Invalid params!"
       render :edit
     end
-  end
-
-  def destroy
-    dart = Dart.find(params[:id])
-    dart.destroy
-  end
-
-  def show
-    @darts = current_user.darts.all
   end
 
 
