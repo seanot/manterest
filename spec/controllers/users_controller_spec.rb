@@ -19,8 +19,7 @@ describe UsersController do
   describe "POST #create" do
     context "successfully creates a user" do
       it "redirects to homepage" do
-        post :create, user: (:user, email: 'other@diff.com', username: 'cooluser!!')
-        # post :create, user: { email: 'other@diff.com', username: 'cooluser!!' }
+        post :create, user: FactoryGirl.attributes_for(:user, email: 'other@diff.com', username: 'cooluser!!')
         response.should redirect_to root_path
       end
     end
