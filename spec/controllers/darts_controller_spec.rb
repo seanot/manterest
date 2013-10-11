@@ -1,7 +1,9 @@
 require 'spec_helper'
 
 describe DartsController do
+
   describe 'POST #create' do
+
     before(:each) do
       @ok_attr = {
       image_url: "img.gif",
@@ -16,6 +18,7 @@ describe DartsController do
     end
 
     context 'Not Logged In' do
+
       before(:each) do
         controller.stub(:current_user).and_return false
         post :create, :dart => @ok_attr
