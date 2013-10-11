@@ -1,9 +1,13 @@
 class DartsController < ApplicationController
 
   def create
-    @dart = current_user.darts.new(dart_params)
+    @board = Board.find(session[:board_id])
+    session[:board_id] = nil
+    @dart = Dart.new(dart_params)
+    @dart.user_id = current_user.id
     if @dart.save
-      redirect_to dart_path(@dart) #this should go to a dartboard!
+      @board.darts << @dart
+      redirect_to board_path(@board) #this should go to a dartboard!
     else
       flash[:error] = "Invalid board!"
       render :new
@@ -52,4 +56,5 @@ class DartsController < ApplicationController
     def dart_params
       params.require(:dart).permit(:image_url, :link_url)
     end
+
 end

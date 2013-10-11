@@ -7,6 +7,16 @@
 <% else %>
   <% @board.dartboards.each do |dboard| %>
     <h6><%= dboard.caption %></h3>
-    <a href="<%= dboard.dart.image_url %>"><img src="<%= dboard.dart.image_url %>" alt="a photo"></a>  
+    <a href="<%= dboard.dart.link_url %>"><img src="<%= dboard.dart.image_url %>" alt="a photo"></a>
   <% end %>
+<% end %>
+
+Create a dart
+<%= form_for @dart  do |f|%>
+  <%= f.label :image_url %>
+  <%= f.text_field :image_url %>
+  <%= f.label :link_url %>
+  <%= f.text_field :link_url %>
+
+  <%= f.submit "Create Dart" %>
 <% end %>
