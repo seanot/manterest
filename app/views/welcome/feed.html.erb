@@ -2,7 +2,7 @@
   <h2><%=h flash[:notice] %></h2>
 <% end %>
 
-<% @darts.each do |dart|%>
+<% @darts.shuffle.each do |dart|%>
 <a href="<%= dart.link_url %>"><img src="<%= dart.image_url %>" alt="a photo"></a>
 <%end%>
 

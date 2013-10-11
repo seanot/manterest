@@ -12,3 +12,14 @@
  *= require_tree .
  */
 
+body {
+  background-image:url("wood_1_@2X.png");
+  margin-left: 15px;
+  color: white;
+}
+
+a {
+  color: white;
+}
+
+
