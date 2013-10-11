@@ -1,3 +1,7 @@
+<% if flash[:notice] %>
+  <h2><%=h flash[:notice] %></h2>
+<% end %>
+
 this is your feed
 <% if current_user %>
   <%= link_to "Logout", logout_path %>
