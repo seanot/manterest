@@ -39,7 +39,9 @@ group :development, :test do
   gem 'rspec-rails', '~> 2.0'
   gem 'factory_girl_rails'
   gem 'capybara'
+  gem 'coveralls', require: false
 end
+
 
 # Use unicorn as the app server
 # gem 'unicorn'
