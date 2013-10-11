@@ -11,12 +11,4 @@
  *= require_self
  *= require_tree .
  */
-html {
-  color: #C8E6D8;
-  background: url('manliness.jpg') no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
 
