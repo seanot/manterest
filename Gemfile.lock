@@ -68,6 +68,8 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    masonry-rails (0.2.0)
+      rails
     mime-types (1.25)
     mini_portile (0.5.1)
     minitest (4.7.5)
@@ -159,6 +161,7 @@ DEPENDENCIES
   factory_girl_rails
   jbuilder (~> 1.2)
   jquery-rails
+  masonry-rails (~> 0.2.0)
   pg
   rails (= 4.0.0)
   rspec-rails (~> 2.0)
