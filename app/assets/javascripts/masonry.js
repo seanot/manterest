@@ -9,7 +9,7 @@ $(function(){
     image: {
             verticalFit: true,
             titleSrc: function(item) {
-                return item.el.attr('title') + ' &middot; <a class="image-source-link" href="'+item.el.attr('value')+'" target="_blank">image source</a>';
+                return item.el.attr('name') + ' &middot; <a class="image-source-link" href="'+item.el.attr('value')+'" target="_blank">image source</a>';
             }
         },
     callbacks: {
