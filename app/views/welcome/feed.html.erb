@@ -3,13 +3,15 @@
 <% end %>
 
 
-  <% @darts.each do |dart|%>
-  <div id="masonry-container" class="transitions-enabled infinite-scroll clearfix">
-     <div class="box col3">
-      <a href="<%= dart.link_url %>"><img src="<%= dart.image_url %>" alt="a photo"></a>
-    </div>
-  </div>
+    <!-- <div class="transitions-enabled infinite-scroll clearfix"> -->
+      <% @darts.shuffle.each do |dart|%>
+         <div class="masonryImage box col3">
+          <a href="<%= dart.link_url %>"><img src="<%= dart.image_url %>" alt="a photo"></a>
+        </div>
+    <!-- </div> -->
   <%end%>
+
+
 
 
 
