@@ -10,7 +10,15 @@
  *
  *= require_self
  *= require_tree .
+ *= require 'masonry/basic'
+ *= require 'masonry/centered'
+ *= require 'masonry/fluid'
+ *= require 'masonry/gutters'
+ *= require 'masonry/infinitescroll'
+ *= require 'masonry/right-to-left'
+ *= require 'masonry/transitions'
  */
+
 
 body {
   background-image:url("wood_1_@2X.png");
@@ -21,5 +29,6 @@ body {
 a {
   color: white;
 }
+
 
 
