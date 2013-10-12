@@ -6,16 +6,18 @@
 
     <!-- <div class="transitions-enabled infinite-scroll clearfix"> -->
 <div id="masonry-container">
-  <% @darts.shuffle.each do |dart|%>
-    <div class="masonryImage box col3">
-      <a value="<%= dart.link_url %>" class="test-popup-link" href="<%=dart.image_url%>" name="<%=dart.caption%>">
-        <div class="masonry-item">
-          <img src="<%= dart.image_url %>" alt="a photo">
-        </div>
-      </a>
-    </div>
-    <!-- </div> -->
-  <%end%>
+  <div id="masonry-object">
+    <% @darts.shuffle.each do |dart|%>
+      <div class="masonryImage box col3">
+        <a value="<%= dart.link_url %>" class="test-popup-link" href="<%=dart.image_url%>" name="<%=dart.caption%>">
+          <div class="masonry-item">
+            <img src="<%= dart.image_url %>" alt="a photo">
+          </div>
+        </a>
+      </div>
+      <!-- </div> -->
+    <%end%>
+  </div>
 </div>
 
 
