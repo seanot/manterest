@@ -54,7 +54,7 @@ class DartsController < ApplicationController
 
   private
     def dart_params
-      params.require(:dart).permit(:image_url, :link_url)
+      params.require(:dart).permit(:caption, :image_url, :link_url)
     end
 
 end
