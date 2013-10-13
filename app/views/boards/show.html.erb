@@ -15,10 +15,20 @@ Create a dart
 
 <% if @board.darts.length == 0 %>
   <p><%= "You currently have no darts, please add some!" %></p>
+
 <% else %>
-  <% @board.dartboards.each do |dboard| %>
-    <h6><%= dboard.caption %></h3>
-    <a href="<%= dboard.dart.link_url %>"><img src="<%= dboard.dart.image_url %>" alt="a photo"></a>
-  <% end %>
+  <div id="masonry-container">
+    <div id="masonry-object">
+      <% @board.dartboards.shuffle.each do |dboard|%>
+        <div class="masonryImage box col2">
+          <a value="<%= dboard.dart.link_url %>" class="test-popup-link" href="<%=dboard.dart.image_url%>" name="<%=dboard.dart.caption%>">
+            <div class="masonry-item">
+              <img src="<%= dboard.dart.image_url %>" alt="a photo">
+            </div>
+          </a>
+        </div>
+      <%end%>
+    </div>
+  </div>
 <% end %>
 
