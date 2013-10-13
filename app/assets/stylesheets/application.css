@@ -18,6 +18,7 @@
  *= require 'masonry/right-to-left'
  *= require 'masonry/transitions'
  *= require magnific-popup
+ *= require bootstrap
  */
 
 

@@ -1,17 +1,8 @@
 <h1><%= @board.name %></h1>
 
 
-Create a dart
-<%= form_for @dart  do |f|%>
-  <%= f.label :caption %>
-  <%= f.text_field :caption %>
-  <%= f.label :image_url %>
-  <%= f.text_field :image_url %>
-  <%= f.label :link_url %>
-  <%= f.text_field :link_url %>
-
-  <%= f.submit "Create Dart" %>
-<% end %>
+<% if @board.user_id == session[:user_id]%><div class="addadart"><a>Add a dart</a></div><%end%>
+<div class="dartform"></div>
 
 <% if @board.darts.length == 0 %>
   <p><%= "You currently have no darts, please add some!" %></p>
@@ -20,14 +11,22 @@ Create a dart
 <div id="masonry-container">
   <div id="masonry-object">
       <% @board.darts.shuffle.each do |dart|%>
-        <div class="masonryImage box col3">
+       <div class="masonryImage box col3">
         <a value="<%= dart.link_url %>" class="test-popup-link" href="<%=dart.image_url%>" name="<%=dart.caption%>">
           <div class="masonry-item">
             <img src="<%= dart.image_url %>" alt="a photo">
+            </a>
+            <% if session[:user_id] != nil%>
+            <div class="repin">
+              <a href="/repin" class="link" id="<%=dart.id%>">Re-Dart!</a>
+            </div>
+            <%end%>
+             <div class="<%=dart.id%>">
+             </div>
+            <div id="user">Thrown By: <%= dart.user.username%></div>
           </div>
-        </a>
+
       </div>
-      <!-- </div> -->
     <%end%>
   </div>
 </div>

@@ -13,9 +13,11 @@
           <div class="masonry-item">
             <img src="<%= dart.image_url %>" alt="a photo">
             </a>
+            <% if session[:user_id] != nil%>
             <div class="repin">
               <a href="/repin" class="link" id="<%=dart.id%>">Re-Dart!</a>
             </div>
+            <%end%>
              <div class="<%=dart.id%>">
              </div>
             <div id="user">Thrown By: <%= dart.user.username%></div>
