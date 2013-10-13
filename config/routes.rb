@@ -15,6 +15,8 @@ Manterest::Application.routes.draw do
   post '/repin' => 'boards#repin'
   post '/repin_it' => 'boards#pin_it'
 
+  get '/addpin' => 'boards#add_pin'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
