@@ -45,6 +45,19 @@ class BoardsController < ApplicationController
                     <%end%>'
   end
 
+  def add_pin
+    render inline: '<%= form_for :dart, url: darts_path  do |f|%>
+                      <%= f.label :caption %>
+                      <%= f.text_field :caption %>
+                      <%= f.label :image_url %>
+                      <%= f.text_field :image_url %>
+                      <%= f.label :link_url %>
+                      <%= f.text_field :link_url %>
+
+                      <%= f.submit "Create Dart" %>
+                    <% end %>'
+  end
+
   def pin_it
     Board.find(params[:board]).darts << Dart.find(params[:dart_id])
     redirect_to board_path(params[:board])

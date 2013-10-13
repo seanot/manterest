@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -5,23 +6,43 @@
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
+  <link href='http://fonts.googleapis.com/css?family=Monsieur+La+Doulaise' rel='stylesheet' type='text/css'>
 </head>
 <body>
+<nav class="navbar navbar-default" role="navigation">
+  <!-- Brand and toggle get grouped for better mobile display -->
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="/">Manterest</a>
+  </div>
 
-  <nav>
-<% if current_user %>
-  <%= link_to "Logout", logout_path %>
-  <%= link_to "Profile", user_path(current_user) %>
-<% else %>
-  <%= link_to "Login", login_path %>
-  <%= link_to "Sign Up", signup_path%>
-<% end %>
-<%= link_to "Steaks", board_path(2)%>
-<%= link_to "Cigars", board_path(3)%>
-<%= link_to "Razors", board_path(4)%>
-<%= link_to "Beards", board_path(1)%>
-  </nav>
+  <!-- Collect the nav links, forms, and other content for toggling -->
+  <div class="collapse navbar-collapse navbar-ex1-collapse">
+    <ul class="nav navbar-nav">
+      <li><%= link_to "Steaks", board_path(2)%></li>
+      <li><%= link_to "Cigars", board_path(3)%></li>
+      <li><%= link_to "Razors", board_path(4)%></li>
+      <li><%= link_to "Beards", board_path(1)%></li>
 
+    </ul>
+
+    <ul class="nav navbar-nav navbar-right">
+      <% if current_user %>
+        <li><%= link_to "Profile", user_path(current_user) %></li>
+        <li><%= link_to "Logout", logout_path %></li>
+      <% else %>
+        <li><%= link_to "Login", login_path %></li>
+        <li><%= link_to "Sign Up", signup_path%></li>
+      <% end %>
+
+    </ul>
+  </div><!-- /.navbar-collapse -->
+</nav>
 <%= yield %>
 
 </body>

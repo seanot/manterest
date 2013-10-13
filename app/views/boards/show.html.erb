@@ -1,17 +1,8 @@
 <h1><%= @board.name %></h1>
 
 
-Create a dart
-<%= form_for @dart  do |f|%>
-  <%= f.label :caption %>
-  <%= f.text_field :caption %>
-  <%= f.label :image_url %>
-  <%= f.text_field :image_url %>
-  <%= f.label :link_url %>
-  <%= f.text_field :link_url %>
-
-  <%= f.submit "Create Dart" %>
-<% end %>
+<% if @board.user_id == session[:user_id]%><div class="addadart"><a>Add a dart</a></div><%end%>
+<div class="dartform"></div>
 
 <% if @board.darts.length == 0 %>
   <p><%= "You currently have no darts, please add some!" %></p>
