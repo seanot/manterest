@@ -35,6 +35,22 @@ class BoardsController < ApplicationController
     redirect_to user_path(current_user)
   end
 
+  def repin
+    @user_boards = User.find(1).boards.all
+    @dart = params[:id]
+    render inline: '<%=form_tag("/repin_it") do%>
+                    <%= select_tag "board", options_from_collection_for_select(@user_boards, "id", "name") %>
+                    <%= hidden_field_tag "dart_id", @dart%>
+                    <%= submit_tag "Thrown Dart!"%>
+                    <%end%>'
+  end
+
+  def pin_it
+    Board.find(params[:board]).darts << Dart.find(params[:dart_id])
+    redirect_to board_path(params[:board])
+  end
+
+
   private
     def board_params
       params.require(:board).permit(:name, :description)

@@ -17,18 +17,19 @@ Create a dart
   <p><%= "You currently have no darts, please add some!" %></p>
 
 <% else %>
-  <div id="masonry-container">
-    <div id="masonry-object">
-      <% @board.dartboards.shuffle.each do |dboard|%>
-        <div class="masonryImage box col2">
-          <a value="<%= dboard.dart.link_url %>" class="test-popup-link" href="<%=dboard.dart.image_url%>" name="<%=dboard.dart.caption%>">
-            <div class="masonry-item">
-              <img src="<%= dboard.dart.image_url %>" alt="a photo">
-            </div>
-          </a>
-        </div>
-      <%end%>
-    </div>
+<div id="masonry-container">
+  <div id="masonry-object">
+      <% @board.darts.shuffle.each do |dart|%>
+        <div class="masonryImage box col3">
+        <a value="<%= dart.link_url %>" class="test-popup-link" href="<%=dart.image_url%>" name="<%=dart.caption%>">
+          <div class="masonry-item">
+            <img src="<%= dart.image_url %>" alt="a photo">
+          </div>
+        </a>
+      </div>
+      <!-- </div> -->
+    <%end%>
   </div>
-<% end %>
+</div>
+<%end%>
 

@@ -17,8 +17,7 @@ $(function(){
       // Function will fire for each target element
       // "item.el" is a target DOM element (if present)
       // "item.src" is a source that you may modify
-
-      console.log(item); // Do whatever you want with "item" object
+// Do whatever you want with "item" object
     }
   }
   });
@@ -28,6 +27,16 @@ $(function(){
       itemSelector : '.masonryImage'
     });
   });
+
+  $('.repin .link').click(function(e){
+    e.preventDefault();
+    var id = $(this).attr('id');
+    $.post("/repin", {"id" : id }, function(response){
+      $('.repin .link#'+id).hide();
+      $('.'+id).append(response);
+    });
+  });
+
 });
 
 
