@@ -12,6 +12,8 @@
         <a value="<%= dart.link_url %>" class="test-popup-link" href="<%=dart.image_url%>" name="<%=dart.caption%>">
           <div class="masonry-item">
             <img src="<%= dart.image_url %>" alt="a photo">
+            <a class="repin" href="/repin">Repin!</a>
+            <div id="user">Thrown By: <%= dart.user.username%></div>
           </div>
         </a>
       </div>

@@ -28,6 +28,16 @@ $(function(){
       itemSelector : '.masonryImage'
     });
   });
+
+  $('.repin').on("click", function(e){
+    console.log("clicked!");
+    e.preventDefault();
+    $.get("/repin",function(response){
+      console.log('it worked!');
+      $('#user').append(response);
+    });
+  });
+
 });
 
 

@@ -1,0 +1,2 @@
+<%= @user_boards %>
+<%= select_tag "board", options_from_collection_for_select(@user_boards, "id", "name", 1) %>

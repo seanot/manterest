@@ -35,6 +35,11 @@ class BoardsController < ApplicationController
     redirect_to user_path(current_user)
   end
 
+  def repin
+    render inline: '<%= select_tag "board", options_from_collection_for_select(User.find(session[:user_id]).boards, "id", "name") %>'
+  end
+
+
   private
     def board_params
       params.require(:board).permit(:name, :description)
