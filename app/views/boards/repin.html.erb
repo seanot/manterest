@@ -1,0 +1,4 @@
+<%=form_tag do%>
+<%= select_tag "board", options_from_collection_for_select(@user_boards, "id", "name") %>
+<%= submit_tag "Thrown Dart!"%>
+<%end%>
