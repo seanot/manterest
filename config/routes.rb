@@ -10,7 +10,7 @@ Manterest::Application.routes.draw do
   get '/signup' => 'users#new'
 
   get '/login' => 'sessions#new'
-  get '/repin' => 'boards#repin'
+  post '/repin' => 'boards#repin'
   post '/login' => 'sessions#login'
 
 

@@ -1,2 +1,4 @@
-<%= @user_boards %>
-<%= select_tag "board", options_from_collection_for_select(@user_boards, "id", "name", 1) %>
+<%=form_tag('/repin_it')%>
+<%= select_tag "board", options_from_collection_for_select(@user_boards, "id", "name") %>
+<%= submit_tag "Thrown Dart!"%>
+<%end%>

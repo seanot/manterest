@@ -36,7 +36,10 @@ class BoardsController < ApplicationController
   end
 
   def repin
-    render inline: '<%= select_tag "board", options_from_collection_for_select(User.find(session[:user_id]).boards, "id", "name") %>'
+    @user_boards = User.find(5).boards.all
+    render inline: '
+                    <%= select_tag "board", options_from_collection_for_select(@user_boards, "id", "name") %>
+                    <%= submit_tag "Thrown Dart!"%>'
   end
 
 
