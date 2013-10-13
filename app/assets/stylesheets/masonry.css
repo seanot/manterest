@@ -1,6 +1,6 @@
 #masonry-container {
-  background: #FFF;
-  padding: 5px;
+  background-image:url("wood_1_@2X.png");
+  /*padding: 5px;*/
   margin-bottom: 20px;
   border-radius: 5px;
   clear: both;
@@ -24,3 +24,20 @@
 .col3 img { max-width: 280px; }
 .col4 img { max-width: 380px; }
 .col5 img { max-width: 480px; }
+
+#masonry-object {
+
+}
+
+
+
+body {
+  background-image:url("wood_1_@2X.png");
+  margin-left: 15px;
+  color: white;
+}
+
+a {
+  color: white;
+}
+

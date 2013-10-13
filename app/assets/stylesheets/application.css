@@ -17,18 +17,7 @@
  *= require 'masonry/infinitescroll'
  *= require 'masonry/right-to-left'
  *= require 'masonry/transitions'
+ *= require magnific-popup
  */
-
-
-body {
-  background-image:url("wood_1_@2X.png");
-  margin-left: 15px;
-  color: white;
-}
-
-a {
-  color: white;
-}
-
 
 
