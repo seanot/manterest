@@ -31,8 +31,7 @@ $(function(){
   $('.repin .link').click(function(e){
     e.preventDefault();
     var id = $(this).attr('id');
-    var data = id;
-    $.post("/repin",data,function(response){
+    $.post("/repin", {"id" : id }, function(response){
       $('.repin .link#'+id).hide();
       $('.'+id).append(response);
     });

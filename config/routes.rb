@@ -10,9 +10,10 @@ Manterest::Application.routes.draw do
   get '/signup' => 'users#new'
 
   get '/login' => 'sessions#new'
-  post '/repin' => 'boards#repin'
   post '/login' => 'sessions#login'
 
+  post '/repin' => 'boards#repin'
+  post '/repin_it' => 'boards#pin_it'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

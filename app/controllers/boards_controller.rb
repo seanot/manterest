@@ -36,10 +36,18 @@ class BoardsController < ApplicationController
   end
 
   def repin
-    @user_boards = User.find(5).boards.all
-    render inline: '
+    @user_boards = User.find(1).boards.all
+    @dart = params[:id]
+    render inline: '<%=form_tag("/repin_it") do%>
                     <%= select_tag "board", options_from_collection_for_select(@user_boards, "id", "name") %>
-                    <%= submit_tag "Thrown Dart!"%>'
+                    <%= hidden_field_tag "dart_id", @dart%>
+                    <%= submit_tag "Thrown Dart!"%>
+                    <%end%>'
+  end
+
+  def pin_it
+    Board.find(params[:board]).darts << Dart.find(params[:dart_id])
+    redirect_to board_path(params[:board])
   end
 
 
