@@ -36,6 +36,10 @@ body {
   color: white;
 }
 
+.nonheader{
+  margin-top: 60px;
+}
+
 .masonry-item a{
   color: black;
   font-size: 16px;
@@ -49,5 +53,9 @@ body {
 
 .boardname{
   color: black;
+  text-align: center;
+}
+
+.boardtitle{
   text-align: center;
 }
