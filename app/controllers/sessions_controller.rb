@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:user][:password])
       reset_session
       session[:user_id] = user.id
-      redirect_to root_path
+      redirect_to user_path(user.id)
     else
       flash[:error] = "Invalid username or password"
       redirect_to login_path
