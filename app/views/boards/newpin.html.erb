@@ -1,0 +1,6 @@
+<%= form_for :dart, url: darts_path  do |f|%>
+  <%= f.text_field :caption, placeholder:"Caption" %><br>
+  <%= f.text_field :image_url, placeholder: "Image URL" %><br>
+  <%= f.text_field :link_url, placeholder: "Link URL" %><br>
+  <%= f.submit "Create Dart" %>
+<% end %>
