@@ -59,3 +59,20 @@ body {
 .boardtitle{
   text-align: center;
 }
+
+.addadart{
+  text-align: center;
+}
+
+.addaboard{
+  text-align: center;
+}
+
+.dartform{
+  margin: 0 auto;
+}
+
+.boardform{
+  margin: 0 auto;
+  width: 200px;
+}
