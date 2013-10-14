@@ -1,4 +1,10 @@
-$(function(){
+$(function() {
+  initPage();
+});
+$(window).bind('page:change', function() {
+  initPage();
+});
+function initPage() {
 
   var $container = $('#masonry-container');
 
@@ -60,6 +66,6 @@ $(function(){
 
 
 
-});
+};
 
 
