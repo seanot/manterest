@@ -31,7 +31,7 @@ $(function(){
     }
     });
 
-  $('.repin .link').click(function(e){
+  $('.repin .link').on("click",function(e){
     e.preventDefault();
     var id = $(this).attr('id');
     $.post("/repin", {"id" : id }, function(response){
@@ -48,6 +48,17 @@ $(function(){
       $('.dartform').append(response);
     });
   });
+
+  $('.addaboard').on("click",function(e){
+    console.log("clicked");
+    e.preventDefault();
+    $.get('/addboard',function(response){
+      $('.addaboard').hide();
+      $('.boardform').append(response);
+    });
+  });
+
+
 
 });
 

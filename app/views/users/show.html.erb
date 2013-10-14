@@ -1,10 +1,23 @@
-<h2>Create a Board</h2>
-<%= link_to "New Board", new_board_path %>
-<h2>Your Boards</h2>
-<ul>
-  <% @user.boards.each do |board| %>
-    <%= link_to "#{board.name}", board_path(board.id) %>
-    <%= link_to "Edit", edit_board_path(board.id) %>
-    <%= link_to "Delete!", board_path(board.id), method: "delete" %><br>
-  <% end %>
-</ul>
+
+<h2><%=@user.username.camelcase%>'s Boards</h2>
+<% if @user.id == session[:user_id]%>
+<div class="addaboard"><a>Add a Board</a></div>
+<div class="boardform"></div>
+<%end%>
+
+<div id="masonry-container">
+  <div id="masonry-object">
+      <% @user.boards.each do |board|%>
+      <% if board.darts.all.first%>
+       <div class="masonryImage box col3">
+          <div class="masonry-item">
+            <a href="/boards/<%=board.id%>">
+              <img src="<%= board.darts.first.image_url %>" alt="a photo">
+            </a>
+            <h4 class="boardname"><%=board.name%></h4>
+          </div>
+      </div>
+      <%end%>
+    <%end%>
+  </div>
+</div>
