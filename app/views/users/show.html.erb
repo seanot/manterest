@@ -8,7 +8,7 @@
 <div id="masonry-container">
   <div id="masonry-object">
       <% @user.boards.each do |board|%>
-      <% if board.darts.all.first%>
+      <% if board.darts.all.first || board.user_id == session[:user_id]%>
        <div class="masonryImage box col3">
           <div class="masonry-item">
             <a href="/boards/<%=board.id%>">
