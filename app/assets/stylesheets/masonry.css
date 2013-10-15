@@ -43,12 +43,16 @@ body {
 .masonry-item a{
   color: black;
   font-size: 16px;
+  border-bottom: 1px;
 }
 
 #user{
   color: black;
-  text-align: right;
-  font-size: 16px;
+  display: inline;
+  font-size: 12px;
+  float: left;
+  margin: 4px;
+  border-top: 1px;
 }
 
 .boardname{
@@ -76,4 +80,28 @@ body {
 .boardform{
   margin: 0 auto;
   width: 165px;
+}
+
+#user img{
+  width: 30px;
+  height: 30px;
+  float: left;
+  margin-right: 5px;
+}
+
+a.link{
+  float: right;
+  margin: 5px 5px 5px 0px;
+   width: 30px;
+  height: 30px;
+}
+
+.repinform{
+  float:right;
+  margin-top: 10px
+}
+
+#user a{
+  color: #444;
+  font-size: 11px;
 }
