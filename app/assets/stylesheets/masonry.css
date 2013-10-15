@@ -53,6 +53,7 @@ body {
   float: left;
   margin: 4px;
   border-top: 1px;
+  width: 140px;
 }
 
 .boardname{
