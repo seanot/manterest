@@ -8,11 +8,20 @@
 <div id="masonry-container">
   <div id="masonry-object">
       <% @user.boards.each do |board|%>
-      <% if board.darts.all.first || @user.id == session[:user_id]%>
+      <% if board.darts.all.first %>
        <div class="masonryImage box col3">
           <div class="masonry-item">
             <a href="/boards/<%=board.id%>">
               <img src="<%= board.darts.first.image_url %>" alt="a photo">
+            </a>
+            <h4 class="boardname"><%=board.name%></h4>
+          </div>
+      </div>
+      <% elsif @user.id == session[:user_id] %>
+        <div class="masonryImage box col3">
+          <div class="masonry-item">
+            <a href="/boards/<%=board.id%>">
+              <img src="http://www.sunshineshabby.com/wp-content/uploads/2012/08/mustache+ties_05.png" alt="a photo">
             </a>
             <h4 class="boardname"><%=board.name%></h4>
           </div>
