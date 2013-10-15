@@ -1,5 +1,5 @@
 
-<h2><%=@user.username.camelcase%>'s Boards</h2>
+<h1 class="boardtitle"><%=@user.username.camelcase%>'s Boards</h1>
 <% if @user.id == session[:user_id]%>
 <div class="addaboard"><a>Add a Board</a></div>
 <div class="boardform"></div>
