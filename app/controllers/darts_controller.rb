@@ -56,7 +56,7 @@ class DartsController < ApplicationController
     @dart = params[:id]
     render inline: '<div class="repinform">
                     <%=form_tag("/repin_it") do%>
-                    <%= select_tag "board", options_from_collection_for_select(@user_boards, "id", "name") %>
+                    <%= select_tag "board", options_from_collection_for_select(@user_boards, "id", "name") %><br>
                     <%= hidden_field_tag "dart_id", @dart%>
                     <%= submit_tag "Throw Dart!"%>
                     <%end%>
