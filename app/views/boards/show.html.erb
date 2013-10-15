@@ -18,14 +18,13 @@
             </a>
             <% if session[:user_id] != nil%>
             <div class="repin">
-              <a href="/repin" class="link" id="<%=dart.id%>">Re-Dart!</a>
+           <a href="/repin" class="link" id="<%=dart.id%>"><img src="http://www.i2clipart.com/cliparts/6/8/f/a/clipart-dart-68fa.png"></a>
             </div>
             <%end%>
              <div class="<%=dart.id%>">
              </div>
-            <div id="user">Thrown By: <%= dart.user.username%></div>
+            <div id="user"><img src="http://a.deviantart.net/avatars/f/a/fancy-mustache.png?15"><%= dart.user.username%><br><%=link_to dart.boards.find_by(user_id: dart.user_id).name, board_path(dart.boards.find_by(user_id: dart.user_id))%></div>
           </div>
-
       </div>
     <%end%>
   </div>
